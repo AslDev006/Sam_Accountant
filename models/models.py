@@ -23,7 +23,7 @@ class Contact_Model(models.Model):
         Boglanilmadi = "Bog'lanilmadi"
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=150)
-    phone_number = models.IntegerField(max_length=9)
+    phone_number = models.CharField(max_length=13)
     called = models.CharField(max_length=100, choices=Call_type, default=Call_type.Boglanilmadi)
     def __str__(self):
         return self.name

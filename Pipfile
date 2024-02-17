@@ -6,6 +6,11 @@ name = "pypi"
 [packages]
 djangorestframework = "*"
 django-cors-headers = "*"
+django-database-url = "*"
+gunicorn = "*"
+environ = "*"
+django-environ = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
