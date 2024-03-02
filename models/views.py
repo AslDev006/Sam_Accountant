@@ -76,22 +76,22 @@ class ContactCreateView(APIView):
 class CalledContactView(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
-        service = Service_Model.objects.filter(called="Bog'lanildi")
-        serializer = Service_Serializer(service, many=True)
+        called = Contact_Model.objects.filter(called="Bog'lanildi")
+        serializer = Contact_Serializer(called, many=True)
         return Response(serializer.data)
 
 class UnCalledContactView(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
-        service = Service_Model.objects.filter(called="Bog'lanilmadi")
-        serializer = Service_Serializer(service, many=True)
+        called = Contact_Model.objects.filter(called="Bog'lanilmadi")
+        serializer = Contact_Serializer(called, many=True)
         return Response(serializer.data)
 
 class AllContactView(APIView):
     permission_classes = [IsAuthenticated]
     def get(self, request, format=None):
-        service = Service_Model.objects.all()
-        serializer = Service_Serializer(service, many=True)
+        service = Contact_Model.objects.all()
+        serializer = Contact_Serializer(service, many=True)
         return Response(serializer.data)
 
 class ContactDetailView(APIView):
