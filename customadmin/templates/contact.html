@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary text-center rounded p-4">
+                                 <h3 class="text-primary"><i class="fa fa-phone me-2"></i>All Contacts</h3>
+                            <br>
+                            <ul class="list-group">
+                                {% for contact in contacts %}
+                              <li class="list-group-item">{{ contact.name }} - {{ contact.phone_number }} - {{ contact.called }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+</div>
+
+
+{% endblock content %}
