@@ -75,6 +75,7 @@ def single_contact(request, id):
     if form.is_valid():
         form.save()
         return redirect('uncalled')
+    print(form)
     context = {
         "form": form,
         "contact": contact,
